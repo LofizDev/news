@@ -136,6 +136,52 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
     }
 
 
+3.	Mã hóa đơn bản
+
+        public static void main (String [] args){
+        String kw = "EZRA CORNELL";
+        String plantext = "CRYPTOGRAPHY";
+        
+        System.out.println( "Bang chu cai: " + sinhBangChuCai());
+                System.out.println("Khoa: "+taoKhoa(kw));
+        System.out.println(plantext);
+        System.out.println("Ma hoa: "+maHoaMonAlpha(plantext, kw));
+       }
+       
+       public static String maHoaMonAlpha(String plantext, String keyword){
+        String cipher = ""; 
+        
+        String key = taoKhoa(keyword);
+        String bangChuCai = sinhBangChuCai();
+        
+        for (int i = 0; i<plantext.length(); i++){
+            char t = plantext.charAt(i);
+            int k = bangChuCai.indexOf(t);
+            char c = key.charAt(k);
+            cipher += c;
+        }
+        return cipher;    
+    }
+ 
+       public static String sinhBangChuCai(){
+        String kq ="";
+        for (char ch = 'A'; ch<='Z'; ch++){
+            kq += ch;
+        }
+            return kq; 
+    }
+    
+       public static String taoKhoa(String keyword){
+        String key = "";
+        
+        for (int i = 0; i< keyword.length(); i++){
+            char t = keyword.charAt(i);
+            if(Character.isAlphabetic(t) && (key.indexOf(t)== -1)){
+                key += t;
+            }
+             }
+          return key;
+       }
 
 
 
