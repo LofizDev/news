@@ -234,7 +234,8 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
             cipher += c;
         }
         return cipher;
-    }
+       }
+       
     ![image](https://user-images.githubusercontent.com/86564838/175353878-20075d9d-e2a1-4df9-9cd9-635f733d7040.png)
 
 ![image](https://user-images.githubusercontent.com/86564838/175353854-7915477c-7c0a-4ebd-974b-b3b857a66037.png)
