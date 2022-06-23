@@ -26,7 +26,8 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
 
 -1.	Mã hóa môt ký tự
 
-public static void main (String [] args) { 
+
+    public static void main (String [] args) { 
 
         String msg = "HELLO";
         
