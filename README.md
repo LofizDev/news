@@ -88,16 +88,27 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
           System.out.println("Pha ma: ");  
           phaMaCaesar(cipher);
     }
-    //ma hoa 1 ky tu caesar
-    public static char shiftChar(char c, int k){
-        if(Character.isLetter(c)){
+        //ma hoa 1 ky tu caesar
+        
+         public static char shiftChar(char c, int k){
+         
+         if(Character.isLetter(c)){
+         
             //1. chuyen c tu bang ma ACSII sang ma bat dau tu 0
+            
+            
             //2. dich vong cong k vi tri n
+            
             //3. chuyen c sang ma ACSII  
+            
             int codeZero = Cau1.charToCode(c);
+            
             int madichvong = codeZero + k % 26;
+            
             char kytu = Cau1.codeToChar(madichvong);
+            
             return kytu;
+            
         }else {
             return c;
         }
