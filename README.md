@@ -184,4 +184,55 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
        }
 
 
+4.	Mã hóa mono
+   
+       public static void main(String [] args){
+        String keyword = "ANDREW DICKSON WHITE";
+        String plantext = "CRYPTOGRAPHY";
+        
+        System.out.println(bangChuCai());
+        System.out.println(sinhKhoa(keyword));
+        //System.out.println(plantext);
+        System.out.println(maHoaMonoAlpha(plantext, keyword));
+       }
+    
+        public static String bangChuCai(){
+        String bangChuCai = "";
+        for (char ch = 'A'; ch<='Z'; ch++){
+           bangChuCai += ch; 
+        }
+        return bangChuCai;
+       }
+       
+       public static String sinhKhoa(String keyword){
+        String key = "";
+        for (int i = 0; i<keyword.length(); i++){
+            char t = keyword.charAt(i);
+            if (Character.isLetter(t) && key.indexOf(t)== -1){
+                   key += t;
+            }
+            
+            for (char ch = 'A'; ch<='Z'; ch++){
+                if(key.indexOf(ch) == -1){
+                    key += ch;
+                }
+
+             }
+        }
+        return key;
+       }
+    
+       public static String maHoaMonoAlpha(String plantext, String keyword){
+        String ascii = bangChuCai();
+        String key = sinhKhoa(keyword);
+        String cipher ="";
+        
+        for (int i = 0; i<plantext.length(); i++){
+            char p = plantext.charAt(i);
+            int k = ascii.indexOf(p);
+            char c = key.charAt(k);
+            cipher += c;
+        }
+        return cipher;
+    }
 
