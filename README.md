@@ -55,3 +55,73 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
     
         return (char)(code + 'A');
     }
+    
+   2.	Mã Hóa Caesar
+
+
+
+          public static void main (String [] args){
+        
+          String msg = "HELLO BAN PHOI";
+        
+          char c = 'A';
+        
+          int k = 3;
+        
+          String cipher = maHoaCaesar(msg, k);
+        
+          String msg2 = giaiMaCaesar(cipher, k);
+        
+          System.out.println("Mot ky tu: " + c);
+          System.out.println( "Ma hoa 1 ky tu: " + shiftChar(c, k));
+          System.out.println("Ma hoa 1 ky tu: " + maHoaCaesar(msg, k)+ " ");
+          System.out.println("---------------------------------------");
+        
+          System.out.println("Ban go: " + msg);
+          System.out.println("Chuoi da ma hoa: " + cipher);
+          System.out.println("Chuoi da giai ma: " + msg2);
+          System.out.println("---------------------------------------");
+        
+          System.out.println("Pha ma: ");  
+          phaMaCaesar(cipher);
+    }
+    //ma hoa 1 ky tu caesar
+    public static char shiftChar(char c, int k){
+        if(Character.isLetter(c)){
+            //1. chuyen c tu bang ma ACSII sang ma bat dau tu 0
+            //2. dich vong cong k vi tri n
+            //3. chuyen c sang ma ACSII  
+            int codeZero = Cau1.charToCode(c);
+            int madichvong = codeZero + k % 26;
+            char kytu = Cau1.codeToChar(madichvong);
+            return kytu;
+        }else {
+            return c;
+        }
+    }
+    
+    // ma hoa chuoi caesar
+    public static String maHoaCaesar(String msg, int k){
+        String kq = "";
+        for(int i = 0; i< msg.length(); i++){
+            kq = kq + shiftChar(msg.charAt(i), k);
+        }
+        return kq;
+    }
+    
+    //giai ma Carsar
+    public static String giaiMaCaesar(String cipher, int k){
+        return (maHoaCaesar(cipher, 26 - k));
+    }
+    
+    // pha ma carsar
+    public static void phaMaCaesar(String cipher){
+        for (int i = 1; i<= 25; i++){
+            System.out.println("k= " + i + ":" + giaiMaCaesar(cipher, i));
+        }
+    }
+
+
+
+
+
