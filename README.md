@@ -60,15 +60,18 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
 
 
 
-          public static void main (String [] args){
+
+
+
+            public static void main (String [] args){
         
-          String msg = "HELLO BAN PHOI";
+            String msg = "HELLO BAN PHOI";
         
-          char c = 'A';
+            char c = 'A';
         
-          int k = 3;
+            int k = 3;
         
-          String cipher = maHoaCaesar(msg, k);
+            String cipher = maHoaCaesar(msg, k);
         
           String msg2 = giaiMaCaesar(cipher, k);
         
