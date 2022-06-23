@@ -25,20 +25,32 @@ https://www.academia.edu/41468167/B%C3%A0i_t%E1%BA%ADp_Java_C%C3%B3_L%E1%BB%9Di_
 
 
 -1.	Mã hóa môt ký tự
+
 public static void main (String [] args) { 
+
         String msg = "HELLO";
+        
         for (int i = 0; i<msg.length(); i++){
+        
         System.out.println(charToCode(msg.charAt(i))+ "\t");
+        
         }
+        
         char ch = 'B';
+        
         System.out.println(charToCode(ch));
+        
         System.out.println(codeToChar(1));
     }
+    
     //chuyen tu ky tu sang ma so
+    
     public static int charToCode(char ch){
+    
         return ch - 'A';
     }
     
     public static char codeToChar(int code){
+    
         return (char)(code + 'A');
     }
